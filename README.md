@@ -1,5 +1,7 @@
 # blog
 
+This is a simple blog application that uses Spring Boot, H2, Spring Data JPA and Spring Rest. This application provides the services of creating, editing, searching and deleting a post.
+
 ## Requirements
 * Maven
 * Java 8 and up
@@ -18,37 +20,51 @@ $ mvn spring-boot:run
 
 ## Tests
 
+Following the order of the commands below it will be possible to test the services obtaining the respective results
+
+Testing the create post service
+
 ```
 curl -H "Content-Type: application/json" --request POST -d "{\"title\":\"Welcome\",\"description\":\"to the new world\",\"publicationDate\":\"2018-01-01 00:00:00\"}"  localhost:8080/posts/
 ```
+
+Result
 
 ```
 {"id":1}
 ```
 
+Testing post search service
+
 ```
 curl localhost:8080/posts/
 ```
+
+Result
 
 ```
 [{"id":1,"title":"Welcome","description":"to the new world","publicationDate":"2018-01-01 00:00:00"}]
 ```
 
+Testing the post search service by id
+
 ```
 curl localhost:8080/posts/1
 ```
 
+Result
+
 ```
 {"id":1,"title":"Welcome","description":"to the new world","publicationDate":"2018-01-01 00:00:00"}
 ```
+
+Testing the post change service
 
 ```
 curl -H "Content-Type: application/json" --request PUT -d "{\"id\":1,\"title\":\"Title\",\"description\":\"Description\",\"publicationDate\":\"2019-01-01 00:00:00\"}" localhost:8080/posts/1
 ```
 
-```
-{"id":1,"title":"Welcome","description":"to the new world","publicationDate":"2018-01-01 00:00:00"}
-```
+Testing the post delete service
 
 ```
 curl --request DELETE  localhost:8080/posts/1
