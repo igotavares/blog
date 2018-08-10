@@ -18,7 +18,7 @@ public class PostController {
     @Autowired
     private PostService service;
 
-    @PostMapping(value = "/")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public PostDTO save(@RequestBody PostDTO post) {
         return service.save(post);
@@ -30,13 +30,13 @@ public class PostController {
         service.update(post, id);
     }
 
-    @GetMapping(value = "/")
+    @GetMapping
     public List<PostDTO> all() {
         return service.findAll();
     }
 
     @GetMapping(value = "/{id}")
-    public PostDTO all(@PathVariable Long id) {
+    public PostDTO get(@PathVariable Long id) {
         return service.findBy(id);
     }
 

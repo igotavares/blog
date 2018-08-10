@@ -46,7 +46,7 @@ public class PostControllerTest {
     public void shouldSaveAPost() throws Exception {
         String contet = "{\"title\":\"Welcome\",\"description\":\"to the new world\",\"publicationDate\":\"2018-01-01 00:00:00\"}";
 
-        mvcMock.perform(post("/posts/")
+        mvcMock.perform(post("/posts")
                             .content(contet)
                             .contentType(MediaType.APPLICATION_JSON_UTF8));
 
@@ -65,7 +65,7 @@ public class PostControllerTest {
 
         String contet = "{\"title\":\"Welcome\",\"description\":\"to the new world\",\"publicationDate\":\"2018-01-01 00:00:00\"}";
 
-        mvcMock.perform(post("/posts/")
+        mvcMock.perform(post("/posts")
                 .content(contet)
                 .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isCreated())
@@ -109,7 +109,7 @@ public class PostControllerTest {
 
     @Test
     public void shouldSearchAllPost() throws Exception {
-        mvcMock.perform(get("/posts/"));
+        mvcMock.perform(get("/posts"));
 
         verify(postServiceMock).findAll();
     }
@@ -118,7 +118,7 @@ public class PostControllerTest {
     public void givenDoNotHavePost_thenItShouldGetEmptyList() throws Exception {
         given(postServiceMock.findAll()).willReturn(empty());
 
-        mvcMock.perform(get("/posts/").contentType(MediaType.APPLICATION_JSON_UTF8))
+        mvcMock.perform(get("/posts").contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$", hasSize(0)));
