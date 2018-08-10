@@ -25,7 +25,7 @@ Following the order of the commands below it will be possible to test the servic
 Testing the create post service
 
 ```
-curl -H "Content-Type: application/json" --request POST -d "{\"title\":\"Welcome\",\"description\":\"to the new world\",\"publicationDate\":\"2018-01-01 00:00:00\"}"  localhost:8080/posts/
+curl -H "Content-Type: application/json" --request POST -d "{\"title\":\"Welcome\",\"description\":\"to the new world\",\"publicationDate\":\"2018-01-01 00:00:00\"}"  localhost:8080/posts
 ```
 
 Result
@@ -37,7 +37,7 @@ Result
 Testing post search service
 
 ```
-curl localhost:8080/posts/
+curl localhost:8080/posts
 ```
 
 Result
