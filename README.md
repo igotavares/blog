@@ -25,7 +25,7 @@ Following the order of the commands below it will be possible to test the servic
 Testing the create post service
 
 ```
-curl -H "Content-Type: application/json" --request POST -d "{\"title\":\"Welcome\",\"description\":\"to the new world\",\"publicationDate\":\"2018-01-01 00:00:00\"}"  localhost:8080/posts
+curl -H "Content-Type: application/json" --request POST -d "{\"title\":\"Welcome\",\"description\":\"to the new world\",\"publicationDate\":\"2018-01-01 00:00:00\"}"  localhost:8080/blog/posts
 ```
 
 Result
@@ -37,7 +37,7 @@ Result
 Testing post search service
 
 ```
-curl localhost:8080/posts
+curl localhost:8080/blog/posts
 ```
 
 Result
@@ -49,7 +49,7 @@ Result
 Testing the post search service by id
 
 ```
-curl localhost:8080/posts/1
+curl localhost:8080/blog/posts/1
 ```
 
 Result
@@ -61,13 +61,19 @@ Result
 Testing the post change service
 
 ```
-curl -H "Content-Type: application/json" --request PUT -d "{\"id\":1,\"title\":\"Title\",\"description\":\"Description\",\"publicationDate\":\"2019-01-01 00:00:00\"}" localhost:8080/posts/1
+curl -H "Content-Type: application/json" --request PUT -d "{\"id\":1,\"title\":\"Title\",\"description\":\"Description\",\"publicationDate\":\"2019-01-01 00:00:00\"}" localhost:8080/blog/posts/1
 ```
 
 Testing the post delete service
 
 ```
-curl --request DELETE  localhost:8080/posts/1
+curl --request DELETE  localhost:8080/blog/posts/1
+```
+
+### Postman
+
+```
+https://www.getpostman.com/collections/b3680b4f92c7ef093a57
 ```
 
 ## Contributing

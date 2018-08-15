@@ -13,13 +13,6 @@ import java.util.Arrays;
 @SpringBootApplication
 public class BlogApplication {
 
-    @Bean
-    public static DozerBeanMapper mapper() {
-        DozerBeanMapper mapper = new DozerBeanMapper();
-        mapper.setMappingFiles(Arrays.asList("dozerJdk8Converters.xml"));
-        return mapper;
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(BlogApplication.class, args);
     }

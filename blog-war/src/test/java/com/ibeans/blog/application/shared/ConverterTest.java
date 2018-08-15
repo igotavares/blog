@@ -1,7 +1,7 @@
 package com.ibeans.blog.application.shared;
 
-import com.ibeans.blog.BlogApplication;
 import com.ibeans.blog.BlogConstants.PostConstants;
+import com.ibeans.blog.config.DozerConfig;
 import com.ibeans.blog.domain.post.Post;
 import com.ibeans.blog.dta.PostDTO;
 import org.junit.Before;
@@ -18,7 +18,7 @@ public class ConverterTest {
 
     @Before
     public void context() {
-        this.converter = new Converter<>(BlogApplication.mapper(), Post.class, PostDTO.class);
+        this.converter = new Converter<>(DozerConfig.mapper(), Post.class, PostDTO.class);
     }
 
     @Test

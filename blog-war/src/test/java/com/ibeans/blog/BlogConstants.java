@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 public interface BlogConstants {
 
     interface PostConstants {
-        Long ID_IS_NULL = null;
         Long ID_IS_ONE = 1L;
         String TITLE_IS_WELCOME = "Welcome";
         String DESCRIPTION_IS_TO_THE_NEW_WORLD = "to the new world";

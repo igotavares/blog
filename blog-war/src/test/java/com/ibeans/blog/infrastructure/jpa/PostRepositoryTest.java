@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -22,10 +23,8 @@ import static org.hamcrest.Matchers.*;
  * Created by igotavares on 07/08/2018.
  */
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = BlogApplication.class)
+@SpringBootTest(classes = BlogApplication.class)
 public class PostRepositoryTest {
-
-    private static final Long DOES_NOT_EXIST = 1L;
 
     @Autowired
     private PostRepository repository;

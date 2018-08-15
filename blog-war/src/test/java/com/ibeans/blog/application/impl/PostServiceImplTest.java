@@ -1,7 +1,7 @@
 package com.ibeans.blog.application.impl;
 
-import com.ibeans.blog.BlogApplication;
 import com.ibeans.blog.BlogConstants.PostConstants;
+import com.ibeans.blog.config.DozerConfig;
 import com.ibeans.blog.domain.post.Post;
 import com.ibeans.blog.domain.post.PostValidation;
 import com.ibeans.blog.dta.PostDTO;
@@ -40,7 +40,7 @@ public class PostServiceImplTest {
 
     @Before
     public void context() {
-        mapper = BlogApplication.mapper();
+        mapper = DozerConfig.mapper();
         postService = new PostServiceImpl(mapper, repositoryMock, validationMock);
     }
 
